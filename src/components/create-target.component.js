@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class CreateTarget extends Component {
   constructor(props) {
@@ -33,6 +34,16 @@ export default class CreateTarget extends Component {
     console.log(`Form submitted:`);
     console.log(`Target Description: ${this.state.target_description}`);
     console.log(`Target Priority: ${this.state.target_priority}`);
+
+    const newTarget = {
+      target_description: this.state.target_description,
+      target_priority: this.state.target_priority,
+      target_completed: this.state.target_completed
+    };
+
+    axios
+      .post("http://localhost:4000/targets/add", newTarget)
+      .then(res => console.log(res.data));
 
     this.setState({
       target_description: "",
