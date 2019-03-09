@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import CreateTodo from "./components/create-todo.component";
-import EditTodo from "./components/edit-todo.component";
-import TodosList from "./components/todos-list.component";
+import CreateTarget from "./components/create-target.component";
+import EditTarget from "./components/edit-target.component";
+import TargetList from "./components/target-list.component";
 
 import profile from "./images/profile.jpeg";
 
@@ -37,9 +37,9 @@ class App extends Component {
             </div>
           </nav>
           <br />
-          <Route path="/" exact component={TodosList} />
-          <Route path="/edit/:id" component={EditTodo} />
-          <Route path="/create" component={CreateTodo} />
+          <Route path="/" exact component={TargetList} />
+          <Route path="/edit/:id" component={EditTarget} />
+          <Route path="/create" component={CreateTarget} />
         </div>
       </Router>
     );
