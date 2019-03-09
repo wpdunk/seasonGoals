@@ -4,8 +4,12 @@ import axios from "axios";
 
 const Target = props => (
   <tr>
-    <td>{props.target.target_description}</td>
-    <td>{props.target.target_priority}</td>
+    <td className={props.target.target_completed ? "completed" : ""}>
+      {props.target.target_description}
+    </td>
+    <td className={props.target.target_completed ? "completed" : ""}>
+      {props.target.target_priority}
+    </td>
     <td>
       <Link to={"/edit/" + props.target._id}>Edit</Link>
     </td>
